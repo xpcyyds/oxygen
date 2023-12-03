@@ -1,0 +1,43 @@
+server:
+  port: 8081
+  session-timeout: 30
+  tomcat.max-threads: 0
+  tomcat.uri-encoding: UTF-8
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3307/dboxygen?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
+#    #url: jdbc:mysql://192.168.174.135:3306/school?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
+#    username: root
+#    password: 111111
+    url: jdbc:mysql://www.qcopen.cn:3306/dboxygen?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8&useJDBCCompliantTimezoneShift=true
+    username: shuser
+    password: "shuser@123."
+
+#微信扫码配置
+wx:
+
+  appId: wx94539f586dbad103
+  appSecret: 5c18fe7ac0adc1e3b969b0e9cb040244
+  server: http://rgu7d8.natappfree.cc
+  qrCodeUrl: https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=TOKEN                                     #获取二维码
+  tokenUrl: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET       #基础接口的token
+  openIdUrl: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET      #获取openId
+  userInfoUrl: https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN            #获取用户
+  token: WeChat                 #验证签名
+
+jwtutils:
+  refreshTokenTime: 5000
+  tokenExpirationTime: 10000
+
+urlutils:
+  weChatUrl: http://16a3c2f4.r3.cpolar.top
+  appId:
+  appSecret:
+
+mqtt:
+  token: "Xpc2023"
+  server: a160d70cf1.iot-mqtts.cn-north-4.myhuaweicloud.com
+
